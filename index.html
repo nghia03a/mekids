@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Mekids - Cửa hàng quần áo trẻ em cute, đáng yêu và chất lượng cao. Thời trang trẻ em Hàn Quốc, Nhật Bản với giá tốt nhất.">
+    <meta name="keywords" content="quần áo trẻ em, cửa hàng trẻ em, thời trang bé gái, thời trang bé trai, quần áo cute">
+    <meta name="author" content="Mekids Shop">
+    <meta property="og:title" content="Mekids - Shop Quần Áo Trẻ Em Cute & Đáng Yêu">
+    <meta property="og:description" content="Mekids - Thời trang trẻ em chất lượng cao với kiểu dáng cute đáng yêu">
+    <meta property="og:type" content="business.business">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1503884017007-ce4140f8d62f?w=1200&h=630&fit=crop">
+    <meta property="og:url" content="https://mekids.com.vn">
+    <link rel="canonical" href="https://mekids.com.vn">
+    <title>Mekids - Shop Quần Áo Trẻ Em Cute | Thời Trang Bé Yêu</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23ff69b4'>👶</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff69b4;
+            --secondary: #ffd700;
+            --accent: #ff1493;
+            --light-pink: #ffe4e1;
+            --light-blue: #e0f8ff;
+            --light-purple: #f0e6ff;
+            --white: #ffffff;
+            --dark: #2d3436;
+            --text-light: #636e72;
+            --shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+            --shadow-heavy: 0 20px 50px rgba(255, 105, 180, 0.25);
+            --transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Quicksand', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fredoka One', 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+
+        /* ============ HEADER & NAVIGATION ============ */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, #ffe4e1 0%, #fff0f5 100%);
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow);
+            padding: 5px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            white-space: nowrap;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .logo span {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .icon-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            cursor: pointer;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+        }
+
+        .icon-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.35);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffe4e1 0%, #fff0f5 50%, #e0f8ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 1rem 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+            top: 10%;
+            right: 5%;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.1) 0%, transparent 70%);
+            bottom: 10%;
+            left: 5%;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            animation: slideInDown 0.8s ease-out 0.3s both;
+            line-height: 1.2;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            margin: 1.5rem auto;
+            border-radius: 2px;
+            animation: expandWidth 0.8s ease-out 0.5s both;
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+
+        .hero p {
+            font-size: clamp(0.9rem, 3vw, 1.2rem);
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: fadeIn 1s ease-out 0.7s both;
+            padding: 0 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeIn 1s ease-out 0.9s both;
+            padding: 0 1rem;
+        }
+
+        .btn {
+            padding: 0.9rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Fredoka One', sans-serif;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 105, 180, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--dark);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.3);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounceDown 2s infinite;
+            z-index: 10;
+        }
+
+        @keyframes bounceDown {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(12px); }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--primary);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        /* ============ SECTIONS ============ */
+        section {
+            padding: 4rem 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: scaleIn 0.6s ease;
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            margin: 1rem auto 3rem;
+            border-radius: 2px;
+        }
+
+        /* ============ FEATURES SECTION ============ */
+        .features {
+            background: linear-gradient(135deg, #fff0f5 0%, #f0e6ff 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: slideUp 0.6s ease;
+            border: 2px solid transparent;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            animation: iconBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* ============ PRODUCTS SECTION ============ */
+        .products {
+            background: linear-gradient(135deg, #e0f8ff 0%, #ffe4e1 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: slideUp 0.6s ease;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .product-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .product-image {
+            width: 100%;
+            padding-top: 100%;
+            background: linear-gradient(135deg, var(--light-pink), var(--light-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(3rem, 15vw, 5rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .product-label {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            min-height: 2.5rem;
+        }
+
+        .product-desc {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            min-height: 2rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 2px solid var(--light-pink);
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-price .old {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        .product-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2);
+            flex-shrink: 0;
+        }
+
+        .product-btn:hover {
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.35);
+        }
+
+        /* ============ CATEGORIES SECTION ============ */
+        .categories {
+            background: linear-gradient(135deg, #f0e6ff 0%, #fff0f5 100%);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            animation: slideUp 0.6s ease;
+        }
+
+        .category-card:nth-child(1) { animation-delay: 0.1s; }
+        .category-card:nth-child(2) { animation-delay: 0.2s; }
+        .category-card:nth-child(3) { animation-delay: 0.3s; }
+        .category-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .category-card:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: var(--shadow-heavy);
+            background: linear-gradient(135deg, var(--light-pink), var(--light-blue));
+        }
+
+        .category-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .category-card h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ============ TESTIMONIALS SECTION ============ */
+        .testimonials {
+            background: linear-gradient(135deg, #ffe4e1 0%, #e0f8ff 100%);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: slideUp 0.6s ease;
+        }
+
+        .testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .stars {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.2rem;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--white);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .author-info strong {
+            display: block;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .author-info small {
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        /* ============ NEWSLETTER SECTION ============ */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: var(--white);
+            padding: 3rem 1rem;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            animation: slideInUp 0.8s ease;
+        }
+
+        .newsletter h2 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .newsletter-input {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-direction: column;
+        }
+
+        .newsletter-input input {
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-family: 'Quicksand', sans-serif;
+            width: 100%;
+        }
+
+        .newsletter-input input::placeholder {
+            color: #ccc;
+        }
+
+        .newsletter-input button {
+            padding: 1rem 2rem;
+            background: var(--secondary);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Fredoka One', sans-serif;
+            width: 100%;
+        }
+
+        .newsletter-input button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            color: var(--white);
+            padding: 3rem 1rem 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            font-size: 1.1rem;
+            font-family: 'Fredoka One', sans-serif;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============ RESPONSIVE DESIGN ============ */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--light-pink);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                margin: 0;
+                z-index: 999;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav a {
+                display: block;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+                font-size: 0.95rem;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+                align-items: center;
+            }
+
+            .header-icons {
+                gap: 0.5rem;
+            }
+
+            .icon-btn {
+                width: 2.2rem;
+                height: 2.2rem;
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .hero h1 {
+                margin-bottom: 1rem;
+            }
+
+            .cta-buttons {
+                gap: 0.75rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .features-grid,
+            .products-grid,
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card,
+            .category-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .feature-icon,
+            .category-icon {
+                font-size: 2.5rem;
+            }
+
+            .product-card {
+                border-radius: 12px;
+            }
+
+            .product-content {
+                padding: 1rem;
+            }
+
+            .product-title {
+                font-size: 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 0.75rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo span {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem 2rem;
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                margin-bottom: 0.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+                padding: 0;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 0;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            section {
+                padding: 2.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+
+            .features-grid,
+            .products-grid,
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card,
+            .category-card {
+                padding: 1.2rem 0.8rem;
+                border-radius: 12px;
+            }
+
+            .feature-icon,
+            .category-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .feature-card h3,
+            .category-card h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-card p,
+            .category-card p {
+                font-size: 0.8rem;
+            }
+
+            .product-card {
+                border-radius: 10px;
+            }
+
+            .product-content {
+                padding: 0.8rem;
+            }
+
+            .product-title {
+                font-size: 0.95rem;
+                min-height: auto;
+                margin-bottom: 0.3rem;
+            }
+
+            .product-desc {
+                font-size: 0.75rem;
+                margin-bottom: 0.75rem;
+                min-height: auto;
+            }
+
+            .product-footer {
+                padding-top: 0.75rem;
+                gap: 0.5rem;
+            }
+
+            .product-price {
+                font-size: 0.95rem;
+            }
+
+            .product-price .old {
+                font-size: 0.7rem;
+            }
+
+            .product-btn {
+                width: 2.2rem;
+                height: 2.2rem;
+                font-size: 1rem;
+            }
+
+            .author-avatar {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.2rem;
+            }
+
+            .author-info strong {
+                font-size: 0.9rem;
+            }
+
+            .author-info small {
+                font-size: 0.75rem;
+            }
+
+            .newsletter {
+                padding: 2rem 1rem;
+            }
+
+            .newsletter h2 {
+                font-size: 1.5rem;
+            }
+
+            .newsletter p {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .newsletter-input input,
+            .newsletter-input button {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+
+            footer {
+                padding: 2rem 1rem 1rem;
+            }
+
+            .footer-section h4 {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-section p {
+                font-size: 0.85rem;
+            }
+
+            .footer-section a {
+                font-size: 0.85rem;
+            }
+
+            .footer-divider {
+                padding-top: 1rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="navbar">
+            <a href="#" class="logo"><span>👶</span> Mekids</a>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">Trang Chủ</a></li>
+                    <li><a href="#features">Tính Năng</a></li>
+                    <li><a href="#products">Sản Phẩm</a></li>
+                    <li><a href="#categories">Danh Mục</a></li>
+                    <li><a href="#testimonials">Đánh Giá</a></li>
+                    <li><a href="#contact">Liên Hệ</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <button class="icon-btn" title="Search">🔍</button>
+                <button class="icon-btn" title="Favorites">❤️</button>
+                <button class="icon-btn" title="Cart">🛒</button>
+            </div>
+            <button class="mobile-menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle">✨ Thời Trang Bé Yêu ✨</div>
+            <h1>Mekids</h1>
+            <div class="hero-divider"></div>
+            <p>Các bộ trang phục cute, đáng yêu và thoải mái cho các bé yêu của bạn. Chất lượng cao, giá tốt, giao hàng nhanh!</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="smoothScroll('#products')">🛍️ Mua Sắm Ngay</button>
+                <button class="btn btn-secondary" onclick="smoothScroll('#categories')">📂 Xem Danh Mục</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features" id="features">
+        <h2 class="section-title">Tại Sao Chọn Mekids?</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Chúng tôi đem lại giải pháp trang phục tốt nhất cho bé yêu của bạn</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Kiểu Dáng Cute</h3>
+                <p>Những thiết kế độc đáo, dễ thương và theo xu hướng thời trang trẻ em hiện nay từ Hàn Quốc, Nhật Bản.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Chất Lượng Cao</h3>
+                <p>Vải cotton 100% tự nhiên, mềm mại, an toàn cho da bé và bền bỉ sau nhiều lần giặt.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Giá Cạnh Tranh</h3>
+                <p>Giá tốt nhất thị trường, thường xuyên có khuyến mãi và chương trình giảm giá hấp dẫn.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Giao Hàng Nhanh</h3>
+                <p>Giao hàng miễn phí cho đơn hàng từ 200k, hoàn tiền 100% nếu không hài lòng.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <h3>Tư Vấn Miễn Phí</h3>
+                <p>Đội tư vấn nhiệt tình sẵn sàng giúp bạn chọn size, kiểu dáng phù hợp với bé yêu.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3>Bảo Hành Tốt</h3>
+                <p>Hỗ trợ đổi trả trong 30 ngày, không cần lý do nếu bé không hài lòng về sản phẩm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products" id="products">
+        <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Những bộ trang phục bán chạy nhất của Mekids</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    👗
+                    <div class="product-label">🔥 Bán Chạy</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Váy Công Chúa</h3>
+                    <p class="product-desc">Váy dạ hội xinh xắn, lưới xuyên thấu</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="old">450k</span>
+                            <span>299k</span>
+                        </div>
+                        <button class="product-btn">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    👕
+                    <div class="product-label">⭐ Mới</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Áo Phông Hình</h3>
+                    <p class="product-desc">Áo phông cotton mềm mại</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="old">150k</span>
+                            <span>89k</span>
+                        </div>
+                        <button class="product-btn">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    👔
+                    <div class="product-label">💝 Gift</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Suit Bé Trai</h3>
+                    <p class="product-desc">Bộ suit lịch sự, phù hợp sự kiện</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="old">650k</span>
+                            <span>449k</span>
+                        </div>
+                        <button class="product-btn">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    👖
+                    <div class="product-label">🔥 Bán Chạy</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Quần Jean Bé</h3>
+                    <p class="product-desc">Quần jean co dãn, thoải mái</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="old">280k</span>
+                            <span>179k</span>
+                        </div>
+                        <button class="product-btn">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    🩱
+                    <div class="product-label">☀️ Hè</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Bộ Bơi Bé</h3>
+                    <p class="product-desc">Đồ bơi chống nắng, an toàn</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="old">320k</span>
+                            <span>219k</span>
+                        </div>
+                        <button class="product-btn">🛒</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    👗
+                    <div class="product-label">✨ Cao Cấp</div>
+                </div>
+                <div class="product-content">
+                    <h3 class="product-title">Đầm Tua Rua</h3>
+                    <p class="product-desc">Đầm thêu tỉ mỉ, vải lưới</p>
+                    <div class="product-footer">
+                        <div class="product-price">
+                            <span class="old">580k</span>
+                            <span>399k</span>
+                        </div>
+                        <button class="product-btn">🛒</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="categories" id="categories">
+        <h2 class="section-title">Danh Mục Sản Phẩm</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Khám phá tất cả các loại trang phục cho bé yêu</p>
+        
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">👗</div>
+                <h3>Váy & Đầm</h3>
+                <p>Váy dạ hội, đầm casual, váy công chúa xinh xắn</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">👕</div>
+                <h3>Áo & Phông</h3>
+                <p>Áo phông, áo sơ mi, áo khoác cho các bé</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">👖</div>
+                <h3>Quần & Short</h3>
+                <p>Quần jean, quần tây, quần short thoải mái</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">👶</div>
+                <h3>Bộ Sơ Sinh</h3>
+                <p>Quần áo an toàn cho bé sơ sinh 0-12 tháng</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Khách Hàng Yêu Mekids</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Những phản hồi tích cực từ các mẹ bỉm sữa</p>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Mekids quá tuyệt vời! Váy của con mình xinh quá, chất vải mềm mại và thoải mái. Con yêu thích mặc váy của Mekids!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👩</div>
+                    <div class="author-info">
+                        <strong>Chị Linh</strong>
+                        <small>Mẹ bé gái 3 tuổi</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Giao hàng nhanh, đóng gói đẹp, sản phẩm đúng như hình. Giá lại rất hợp lý. Sẽ tiếp tục ủng hộ Mekids!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👩</div>
+                    <div class="author-info">
+                        <strong>Chị Hương</strong>
+                        <small>Mẹ bé trai 5 tuổi</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Bộ đồ bơi của con mình rất đẹp và chất lượng tốt. Mình rất hài lòng với dịch vụ khách hàng!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👩</div>
+                    <div class="author-info">
+                        <strong>Chị Hà</strong>
+                        <small>Mẹ bé gái 4 tuổi</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>💌 Nhận Ưu Đãi Độc Quyền</h2>
+            <p>Đăng ký nhận bản tin để cập nhật những sản phẩm mới, khuyến mãi hot và mã giảm giá từ Mekids!</p>
+            <div class="newsletter-input">
+                <input type="email" placeholder="Nhập email của bạn...">
+                <button>Đăng Ký</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🎀 Mekids</h4>
+                <p>Cửa hàng quần áo trẻ em số 1 TP. HCM, chuyên cung cấp trang phục cute và chất lượng cao cho các bé yêu.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="TikTok">🎵</a>
+                    <a href="#" title="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>📋 Danh Mục</h4>
+                <ul>
+                    <li><a href="#">Váy & Đầm</a></li>
+                    <li><a href="#">Áo & Phông</a></li>
+                    <li><a href="#">Quần & Short</a></li>
+                    <li><a href="#">Bộ Sơ Sinh</a></li>
+                    <li><a href="#">Sale Off</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>📞 Liên Hệ</h4>
+                <ul>
+                    <li><a href="tel:0909123456">📱 0909 123 456</a></li>
+                    <li><a href="mailto:info@mekids.vn">📧 info@mekids.vn</a></li>
+                    <li><a href="#">📍 123 Nguyễn Huệ, Q.1</a></li>
+                    <li><a href="#">⏰ 9:00 - 22:00 Hàng Ngày</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>🛒 Hỗ Trợ</h4>
+                <ul>
+                    <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+                    <li><a href="#">Hướng Dẫn Mua Hàng</a></li>
+                    <li><a href="#">Chính Sách Bảo Hành</a></li>
+                    <li><a href="#">Điều Khoản & Điều Kiện</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mekids - Cửa Hàng Quần Áo Trẻ Em. Tất cả quyền được bảo lưu.</p>
+            <p>Thiết kế và phát triển bởi <strong>Mekids Dev Team</strong></p>
+        </div>
+    </footer>
+
+    <script>
+        // ============ HEADER SCROLL EFFECT ============
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ============ MOBILE MENU TOGGLE ============
+        const menuBtn = document.getElementById('menuBtn');
+        const nav = document.getElementById('nav').querySelector('ul');
+
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                menuBtn.textContent = nav.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuBtn.textContent = '☰';
+            });
+        });
+
+        // ============ SMOOTH SCROLL FUNCTION ============
+        function smoothScroll(target) {
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Close menu if open
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    menuBtn.textContent = '☰';
+                }
+            }
+        }
+
+        // ============ PRODUCT BUTTON CLICK ============
+        document.querySelectorAll('.product-btn').forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productName = btn.closest('.product-card').querySelector('.product-title').innerText;
+                const productPrice = btn.closest('.product-card').querySelector('.product-price').innerText;
+                alert(`✨ Bạn đã thêm "${productName}" vào giỏ hàng!\n💰 Giá: ${productPrice}`);
+            });
+        });
+
+        // ============ NEWSLETTER SUBSCRIPTION ============
+        const newsletterBtn = document.querySelector('.newsletter-input button');
+        const newsletterInput = document.querySelector('.newsletter-input input');
+
+        if (newsletterBtn) {
+            newsletterBtn.addEventListener('click', () => {
+                const email = newsletterInput.value;
+                if (email && email.includes('@')) {
+                    alert('🎉 Cảm ơn bạn đã đăng ký!\nBạn sẽ nhận được ưu đãi độc quyền sớm thôi!');
+                    newsletterInput.value = '';
+                } else {
+                    alert('⚠️ Vui lòng nhập email hợp lệ!');
+                }
+            });
+        }
+
+        // ============ CATEGORY CARD CLICK ============
+        document.querySelectorAll('.category-card').forEach((card) => {
+            card.addEventListener('click', () => {
+                const categoryName = card.querySelector('h3').innerText;
+                alert(`🛒 Đang chuyển đến danh mục: ${categoryName}`);
+            });
+        });
+
+        // ============ KEYBOARD NAVIGATION ============
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                menuBtn.textContent = '☰';
+            }
+        });
+
+        // ============ SCROLL ANIMATION ============
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .product-card, .category-card, .testimonial-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============ EASTER EGG ============
+        // ============ EASTER EGG ============
+let clickCount = 0;
+document.querySelector('.logo').addEventListener('click', (e) => {
+    e.preventDefault();
+    clickCount++;
+
+    if (clickCount === 5) {
+        alert('🎉 Chúc mừng bạn tìm được Easter Egg!\n💝 Sử dụng mã: MEKIDS10 để được giảm 10% cho đơn hàng đầu tiên!');
+        clickCount = 0; // reset lại
+    }
+});
